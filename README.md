@@ -14,6 +14,8 @@ Multi ORB-SLAM3 combines the advantages of both systems and allows multiple came
 
 The installation of multi_orbslam3 requires the same libraries as ORB-SLAM3. Please follow the instructions on [this page](https://github.com/UZ-SLAMLab/ORB_SLAM3#1-prerequisites) to install them.
 
+**Note: This repository has been tested on Ubuntu 18.04 and ROS Melodic. Other versions may not be compatible.**
+
 To build multi_orbslam3, you need to clone this repository and run the following commands:
 
 ```bash
