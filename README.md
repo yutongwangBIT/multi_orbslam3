@@ -23,6 +23,9 @@ cd multi_orbslam3
 catkin build
 
 ```
+
+**Note: We use catkin build instead of catkin_make.**
+
 ## Usage
 
 To run Multi ORB-SLAM3, you need to launch one server node and multiple client nodes. Each client node corresponds to one camera that performs local SLAM and sends its data to the server node. The server node performs global optimization and fusion of the data from different clients.
