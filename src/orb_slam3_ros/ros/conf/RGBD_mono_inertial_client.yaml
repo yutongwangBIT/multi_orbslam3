@@ -1,0 +1,109 @@
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+Camera_type: "PinHole"
+
+# Camera calibration and distortion parameters (OpenCV)
+camera_fx: 525.0
+camera_fy: 525.0
+camera_cx: 319.5
+camera_cy: 239.5
+
+camera_k1: 0.0
+camera_k2: 0.0
+camera_k3: 0.0
+camera_p1: 0.0
+camera_p2: 0.0
+
+# Camera resolution
+camera_width: 640
+camera_height: 480
+
+# Camera frames per second
+camera_fps: 30.0
+
+# IR projector baseline times fx (aprox.)
+camera_bf: 40.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+camera_RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 40.0
+
+# Deptmap values factor 
+DepthMapFactor: 1.0 #ROS DIRRFERENT
+
+# Transformation from camera to body-frame (imu)
+Tbc_data: [0.0148655429818, -0.999880929698, 0.00414029679422, -0.0216401454975,
+         0.999557249008, 0.0149672133247, 0.025715529948, -0.064676986768,
+        -0.0257744366974, 0.00375618835797, 0.999660727178, 0.00981073058949,
+         0.0, 0.0, 0.0, 1.0]
+
+# IMU noise
+IMU_NoiseGyro: 1.7e-4 #1.6968e-04
+IMU_NoiseAcc: 2.0000e-3 #2.0e-3
+IMU_GyroWalk: 1.9393e-05
+IMU_AccWalk: 3.0000e-03 # 3e-03
+IMU_Frequency: 200
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor/nFeatures: 1000 # 1000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid
+ORBextractor/scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid
+ORBextractor/nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast
+ORBextractor/iniThFAST: 20
+ORBextractor/minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer_KeyFrameSize: 0.05
+Viewer_KeyFrameLineWidth: 1
+Viewer_GraphLineWidth: 0.9
+Viewer_PointSize: 2
+Viewer_CameraSize: 0.08
+Viewer_CameraLineWidth: 3
+Viewer_ViewpointX: 0
+Viewer_ViewpointY: -0.7
+Viewer_ViewpointZ: -3.5 # -1.8
+Viewer_ViewpointF: 500
+
+#--------------------------------------------------------------------------------------------
+# Timing Parameters
+#--------------------------------------------------------------------------------------------
+LockSleepTracking: 100
+LockSleepLM: 100
+TimeStampJump: 2.0
+
+#--------------------------------------------------------------------------------------------
+# Communication Parameters
+#---------------------------------------------------------------------------------------------
+Comm/CommRateClient: 2000
+#--------------------------------------------------------------------------------------------
+# LocalMapping Parameters
+#---------------------------------------------------------------------------------------------
+LM/LocalBASize: 20
+
+Server/Viewer_KeyFrameSize: 0.05
+Server/Viewer_KeyFrameLineWidth: 1
+Server/Viewer_GraphLineWidth: 0.9
+Server/Viewer_PointSize: 2
+Server/Viewer_CameraSize: 0.08
+Server/Viewer_CameraLineWidth: 3
+Server/Viewer_ViewpointX: 0
+Server/Viewer_ViewpointY: -0.7
+Server/Viewer_ViewpointZ: -1.8
+Server/Viewer_ViewpointF: 500

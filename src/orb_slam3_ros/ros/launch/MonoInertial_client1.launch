@@ -1,0 +1,32 @@
+<launch>
+
+  <node pkg="tf" type="static_transform_publisher" name="broadcasterC1" args="0 0 0 -1.571 0 -2 world odomC1 100" />
+
+  <node name="orb_slam3_ros_client1_monoInertial" pkg="orb_slam3_ros" args="MONO_IMU" type="orb_slam3_ros_mono_inertial" output="screen">
+       <remap from="/camera/image_raw" to="/cam0/image_raw1"/>
+       <remap from="/imu" to="/imu01"/>
+       <remap from="/gt_pos" to="/leica/position1"/>
+       <remap from="/MapFromServer1" to="/MapOutServer1"/>
+       <rosparam command="load" file="$(find orb_slam3_ros)/ros/conf/EuRoC_mono_inertial_client.yaml" />
+
+       <param name="Rate" type="int" value="1000" />
+       <param name="ClientPubMapBuffer" type="int" value="2" />
+
+       <param name="ClientId" type="int" value="1" />
+
+       <param name="mKfItBoundPub" type="int" value="100" />
+       <param name="mKfItBound" type="int" value="100" />
+       <param name="mMpItBoundPub" type="int" value="4500" />
+       <param name="mMpItBound" type="int" value="6000" />
+
+       <param name="localize_only" type="bool" value="false" />
+       <param name="reset_map" type="bool" value="false" />
+
+       <!-- static parameters -->
+       <param name="load_map" type="bool" value="false" />
+       <param name="voc_file" type="string" value="/home/yutong/orb_slam3_ws/src/orb_slam3_ros/orb_slam3/Vocabulary/ORBvoc.txt" />
+       <param name="save_path" type="string" value="/home/yutong/ORB_SLAM3/evaluation/results/MH05_INERTIAL_CLIENT.csv" />
+  </node>
+
+<!--   <node type="rviz" name="rviz" pkg="rviz" args="-d /home/robin/orb3_ros_ws/src/orb_slam3_ros/ros/conf/rviz_config.rviz"/> -->
+</launch>

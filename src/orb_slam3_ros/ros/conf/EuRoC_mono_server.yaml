@@ -1,0 +1,51 @@
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+Server/Camera_type: "PinHole"
+
+# Camera calibration and distortion parameters (OpenCV)
+Server/Camera_fx: 458.654
+Server/Camera_fy: 457.296
+Server/Camera_cx: 367.215
+Server/Camera_cy: 248.375
+
+Server/Camera_k1: -0.28340811
+Server/Camera_k2: 0.07395907
+Server/Camera_p1: 0.00019359
+Server/Camera_p2: 1.76187114e-05
+
+# Camera frames per second
+Server/Camera_fps: 20.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Server/Camera_RGB: 0
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#---------------------------------------------------------------------------------------------
+Server/Viewer_KeyFrameSize: 0.05
+Server/Viewer_KeyFrameLineWidth: 1
+Server/Viewer_GraphLineWidth: 0.9
+Server/Viewer_PointSize: 2
+Server/Viewer_CameraSize: 0.08
+Server/Viewer_CameraLineWidth: 3
+Server/Viewer_ViewpointX: 0
+Server/Viewer_ViewpointY: -0.7
+Server/Viewer_ViewpointZ: -1.8
+Server/Viewer_ViewpointF: 500
+
+#--------------------------------------------------------------------------------------------
+# IMU Parameters
+#---------------------------------------------------------------------------------------------
+# Transformation from camera to body-frame (imu)
+Server/Tbc_data: [0.0148655429818, -0.999880929698, 0.00414029679422, -0.0216401454975,
+         0.999557249008, 0.0149672133247, 0.025715529948, -0.064676986768,
+        -0.0257744366974, 0.00375618835797, 0.999660727178, 0.00981073058949,
+         0.0, 0.0, 0.0, 1.0]
+
+# IMU noise
+Server/IMU_NoiseGyro: 1.7e-4 #1.6968e-04
+Server/IMU_NoiseAcc: 2.0000e-3 #2.0e-3
+Server/IMU_GyroWalk: 1.9393e-05
+Server/IMU_AccWalk: 3.0000e-03 # 3e-03
+Server/IMU_Frequency: 200

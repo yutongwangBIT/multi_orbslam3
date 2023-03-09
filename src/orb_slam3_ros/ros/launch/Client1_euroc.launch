@@ -1,0 +1,36 @@
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="broadcasterC1" args="20 20 0 -1.571 0 -2 world odomC1 100" />
+
+  <node name="orb_slam3_ros_client1" pkg="orb_slam3_ros" args="MONO"
+      type="orb_slam3_ros_client" output="screen">
+
+       <remap from="/camera/image_raw" to="/cam0/image_raw1"/>
+       <rosparam command="load" file="$(find orb_slam3_ros)/ros/conf/EuRoC_mono_client.yaml" />
+       <param name="FrameId" type="string" value="odomC1" />
+       <param name="ClientId" type="int" value="1" />
+
+       <param name="Rate" type="int" value="1000" />
+       <param name="ClientPubMapBuffer" type="int" value="2" />
+
+       <param name="mKfItBoundPub" type="int" value="50" />
+       <param name="mKfItBound" type="int" value="50" />
+       <param name="mMpItBoundPub" type="int" value="2500" />
+       <param name="mMpItBound" type="int" value="3000" />
+
+       <param name="localize_only" type="bool" value="false" />
+       <param name="reset_map" type="bool" value="false" />
+
+       <!-- static parameters -->
+       <param name="load_map" type="bool" value="false" />
+       <param name="map_file" type="string" value="map.bin" />
+       <!--param name="settings_file" type="string" value="/home/robin/ros_orb_ws/src/orb_slam_2_ros/orb_slam2/config/vi_euroc.yaml" /-->
+       <param name="voc_file" type="string" value="/home/yutong/orb_slam3_ws/src/orb_slam3_ros/orb_slam3/Vocabulary/ORBvoc.txt" />
+
+
+      <!--Close/far Threshold. Baseline times.-->
+      <param name="ThDepth" type="double" value="40" />
+      <param name="DepthMapFactor" type="double" value="1.0" />
+  </node>
+
+<!--   <node type="rviz" name="rviz" pkg="rviz" args="-d /home/robin/orb3_ros_ws/src/orb_slam3_ros/ros/conf/rviz_config.rviz"/> -->
+</launch>

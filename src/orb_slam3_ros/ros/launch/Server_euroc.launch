@@ -1,0 +1,23 @@
+<launch>
+    <!--rosparam command="load" file="$(find orb_slam3_ros)/ros/conf/EuRoC_mono_server.yaml" /-->
+    <rosparam command="load" file="$(find orb_slam3_ros)/ros/conf/TUM_512_Server.yaml" />
+    <node name="orb_slam3_ros_server" pkg="orb_slam3_ros" args="IMU_MONOCULAR"
+      type="orb_slam3_ros_server" output="screen" >
+
+      <remap from="/MapFromClient0" to="/MapOutClient0"/>
+      <remap from="/MapFromClient1" to="/MapOutClient1"/>
+      <remap from="/MapFromClient2" to="/MapOutClient2"/>
+      <remap from="/MapFromClient3" to="/MapOutClient3"/>
+      <param name="voc_file" type="string" value="/home/yutong/orb_ws/src/orb_slam3_ros/orb_slam3/Vocabulary/ORBvoc.txt" />
+      <param name="save_path" type="string" value="/home/yutong/ORB_SLAM3/evaluation/results/MH04_INERTIAL_SERVER.csv" />
+
+      <param name="NumOfClients" type="int" value="2" />
+
+      <param name="ServerSubMapBuffer" type="int" value="8" />
+      <param name="mKfItBoundPub" type="int" value="60" />
+      <param name="mKfItBound" type="int" value="400" />
+      <param name="mMpItBoundPub" type="int" value="3000" />
+      <param name="mMpItBound" type="int" value="12000" />
+  </node>
+
+</launch>

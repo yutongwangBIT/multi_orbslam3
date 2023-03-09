@@ -1,0 +1,55 @@
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+Server/Camera_type: "KannalaBrandt8"
+# Camera calibration and distortion parameters (OpenCV)
+Server/Camera_fx: 190.978477 # 190.97847715128717
+Server/Camera_fy: 190.973307 # 190.9733070521226
+Server/Camera_cx: 254.931706 # 254.93170605935475
+Server/Camera_cy: 256.897442 # 256.8974428996504
+
+# Equidistant distortion 0.0034823894022493434, 0.0007150348452162257, -0.0020532361418706202, 0.00020293673591811182
+#Camera.bFishEye: 1
+Server/Camera_k1: 0.003482389402 # 0.0034823894022493434
+Server/Camera_k2: 0.000715034845 # 0.0007150348452162257
+Server/Camera_k3: -0.002053236141 # -0.0020532361418706202
+Server/Camera_k4: 0.000202936736 # 0.00020293673591811182
+
+# Camera resolution
+Server/Camera_width: 512
+Server/Camera_height: 512
+
+# Camera frames per second
+Server/Camera_fps: 20.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Server/Camera_RGB: 1
+
+# Transformation from body-frame (imu) to camera
+
+Server/Tbc_data: [-0.9995250378696743, 0.0075019185074052044, -0.02989013031643309, 0.045574835649698026,
+          0.029615343885863205, -0.03439736061393144, -0.998969345370175, -0.071161801837997044,
+          -0.008522328211654736, -0.9993800792498829, 0.03415885127385616, -0.044681254117144367,
+          0.0, 0.0, 0.0, 1.0]
+
+# IMU noise (Use those from VINS-mono)
+Server/IMU_NoiseGyro: 0.00016 # rad/s^0.5
+Server/IMU_NoiseAcc: 0.0028 # m/s^1.5
+Server/IMU_GyroWalk: 0.000022 # rad/s^1.5
+Server/IMU_AccWalk: 0.00086 # m/s^2.5
+Server/IMU_Frequency: 200
+
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Server/Viewer_KeyFrameSize: 0.05
+Server/Viewer_KeyFrameLineWidth: 1
+Server/Viewer_GraphLineWidth: 0.9
+Server/Viewer_PointSize: 2
+Server/Viewer_CameraSize: 0.08
+Server/Viewer_CameraLineWidth: 3
+Server/Viewer_ViewpointX: 0
+Server/Viewer_ViewpointY: -0.7
+Server/Viewer_ViewpointZ: -1.8
+Server/Viewer_ViewpointF: 500

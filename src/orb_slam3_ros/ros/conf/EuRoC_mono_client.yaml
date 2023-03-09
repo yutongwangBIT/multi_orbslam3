@@ -1,0 +1,71 @@
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+camera_type: "PinHole"
+
+# Camera calibration and distortion parameters (OpenCV)
+camera_fx: 458.654
+camera_fy: 457.296
+camera_cx: 367.215
+camera_cy: 248.375
+
+camera_k1: -0.28340811
+camera_k2: 0.07395907
+camera_k3: 0.0
+camera_p1: 0.00019359
+camera_p2: 1.76187114e-05
+
+# Camera frames per second
+camera_fps: 20.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+camera_RGB: 0
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor/nFeatures: 1000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid
+ORBextractor/scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid
+ORBextractor/nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast
+ORBextractor/iniThFAST: 20
+ORBextractor/minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#---------------------------------------------------------------------------------------------
+Viewer_KeyFrameSize: 0.05
+Viewer_KeyFrameLineWidth: 1
+Viewer_GraphLineWidth: 0.9
+Viewer_PointSize: 2
+Viewer_CameraSize: 0.08
+Viewer_CameraLineWidth: 3
+Viewer_ViewpointX: 0
+Viewer_ViewpointY: -0.7
+Viewer_ViewpointZ: -1.8
+Viewer_ViewpointF: 500
+
+#--------------------------------------------------------------------------------------------
+# Timing Parameters
+#--------------------------------------------------------------------------------------------
+LockSleepTracking: 100
+LockSleepLM: 100
+TimeStampJump: 1.0
+#--------------------------------------------------------------------------------------------
+# Communication Parameters
+#---------------------------------------------------------------------------------------------
+Comm/CommRateClient: 2000
+#--------------------------------------------------------------------------------------------
+# LocalMapping Parameters
+#---------------------------------------------------------------------------------------------
+LM/LocalBASize: 20
