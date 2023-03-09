@@ -19,7 +19,10 @@ The installation of multi_orbslam3 requires the same libraries as ORB-SLAM3. Ple
 To build multi_orbslam3, you need to clone this repository and run the following commands:
 
 ```bash
-cd multi_orbslam3 
+mkdir -p ~catkin_ws/src
+cd ~catkin_ws/src
+git clone https://github.com/yutongwangBIT/multi_orbslam3.git
+cd ..
 catkin build
 
 ```
